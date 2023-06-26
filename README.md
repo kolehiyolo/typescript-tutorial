@@ -14,3 +14,7 @@ Lesson 3: Type Basics
 * I can't exactly recall running into such issues before to actually paint you a picture, but I vaguely remember encountering them when I was doing my snake game
 * Let's see what else TypeScript can do
 * Also NaN means Not-a-Number lol didn't know that
+
+Lesson 4: Objects and Arrays
+* The lesson is good and strictness with the arrays and object can really be beneficial, yes
+* All my realizations have been commented in the sandbox.ts file, which proves my understanding of the topic
