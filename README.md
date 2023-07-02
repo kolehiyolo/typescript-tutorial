@@ -18,3 +18,11 @@ Lesson 3: Type Basics
 Lesson 4: Objects and Arrays
 * The lesson is good and strictness with the arrays and object can really be beneficial, yes
 * All my realizations have been commented in the sandbox.ts file, which proves my understanding of the topic
+
+Lesson 5: Explicit Types
+* Pretty straightforward lesson
+* The lesson teaches about Explicit Typing, in which you explicitly assign types to the variable during declaration
+* This way, you don't have to assign a value right off the bat but still ensure that strict typing is done for when you eventually assign a value
+* You can assign an array type to a variable by doing variableName: type[], and it's recommended to declare an empty array value so array methods can be done to the variable in the future such as pushing
+* You can also use mixed types for variables by declaring types with the | operator (the traditional OR operator is || so keep in mind the difference)
+* Lastly, you can use the keyword "object" as a type, or if you want to specify the properties and their typing, just do a typical Mongoose-like Schema declaration
