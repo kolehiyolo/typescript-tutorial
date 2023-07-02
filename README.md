@@ -32,3 +32,11 @@ Lesson 6: Dynamic (any) Types
 * Basically, you can use the "any" keyword as a type, which means you can assign a variable any type of value
 * This flies in the face of what TypeScript is all about, and I think this is just done if you somehow wnat to opt out of the default behavior in which variables are implicitly assigned types
 * The tutorial says this can be useful in very rare/niche scenarios, but damn I can't think of any such scenario off the top of my head
+
+Lesson 7: Better Workflow & tsconfig
+* The lesson dives into how exactly TypeScript file management works in actual projects
+* You can keep using per-file compiling and watching using tsc -w file.ts, but you can instead initialize a tsconfig.json file which will have the settings adjustable to your needs to determine how the compiler works
+* Adjust the "rootDir" and "outDir" properties to dictate where to find the .ts files to compile and where to plop the .js output
+* Then do tsc -w, which will watch and compile all .ts files into .js equivalents
+* To further ensure that only the .ts files under the "rootDir" value is watched and compiled, include a parent "include" parameter under tsconfig.json, with value ["src"] (src in this example is the value passed to rootDir)
+* Interesting lesson overall, but I'm not entirely sure how well it would work in practice yet, especially with massive projects with complex folderings, so we'll see
