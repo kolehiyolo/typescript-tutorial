@@ -40,3 +40,13 @@ Lesson 7: Better Workflow & tsconfig
 * Then do tsc -w, which will watch and compile all .ts files into .js equivalents
 * To further ensure that only the .ts files under the "rootDir" value is watched and compiled, include a parent "include" parameter under tsconfig.json, with value ["src"] (src in this example is the value passed to rootDir)
 * Interesting lesson overall, but I'm not entirely sure how well it would work in practice yet, especially with massive projects with complex folderings, so we'll see
+
+Lesson 8: Function Basics
+* Since we've already done explicit typing for all other possible variable types, this lesson focuses on the Function type
+* Unlike the rest, the Function keyword must be capitalized
+* All arrow functions set to variables will then implicitly declare that variable as a function type, and can't be assigned non-function values moving forward
+* The interesting thing now is, you can actually go ahead and assign types to a function's return value
+* This is pretty cool since it follows the usual function typing in other languages that I've used, particularly C, C++ and C#, and is good to better dictate what a function's, well, intended "function" is
+* For example, while we can name a function to explain what it does and even write comments to detail this, having the return value's type further makes reading code easier and will certainly help avoid function chain errors
+* Also, any variable that is assigned a function's return value implicitly takes the type of said return value, for example, let result = minus(10, 7), in which minus()'s return value type is number, sets result to be of type number
+* I think that's it overall
