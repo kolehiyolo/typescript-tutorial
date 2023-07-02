@@ -1,30 +1,34 @@
-let greet = () => {
-  console.log('hello, world');
+type StringOrNum = string | number;
+type objWithName = {
+  name: string,
+  uid: StringOrNum
 };
 
-// ! greet = 'word';
-
-greet = () => {
-  console.log('okay');
+const logDetails = (
+  // uid: string | number,
+  uid: StringOrNum,
+  item: string
+) => {
+  console.log(`${item} has a uid of ${uid}`);
 };
 
-let greet2: Function;
-
-greet2 = () => {
-  console.log('hello again dude');
+const greet = (
+  // user: {
+  //   name: string,
+  //   uid: string | number
+  // }
+  user: objWithName
+) => {
+  console.log(`${user.name} says hello`);
 };
 
-const add = (a: number, b: number, c: number | string = 10): void => {
-  console.log(a+b);
-  console.log(c);
+const greet2 = (
+  // user: {
+  //   name: string,
+  //   uid: string | number
+  // }
+  user: objWithName
+) => {
+  console.log(`${user.name} says hello`);
 };
 
-add(5, 10);
-
-const minus = (a: number, b: number): number => {
-  return a-b;
-};
-
-let result = minus(10, 7);
-
-console.log(result);

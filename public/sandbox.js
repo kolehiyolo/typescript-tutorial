@@ -1,22 +1,22 @@
 "use strict";
-let greet = () => {
-    console.log('hello, world');
+const logDetails = (
+// uid: string | number,
+uid, item) => {
+    console.log(`${item} has a uid of ${uid}`);
 };
-// ! greet = 'word';
-greet = () => {
-    console.log('okay');
+const greet = (
+// user: {
+//   name: string,
+//   uid: string | number
+// }
+user) => {
+    console.log(`${user.name} says hello`);
 };
-let greet2;
-greet2 = () => {
-    console.log('hello again dude');
+const greet2 = (
+// user: {
+//   name: string,
+//   uid: string | number
+// }
+user) => {
+    console.log(`${user.name} says hello`);
 };
-const add = (a, b, c = 10) => {
-    console.log(a + b);
-    console.log(c);
-};
-add(5, 10);
-const minus = (a, b) => {
-    return a - b;
-};
-let result = minus(10, 7);
-console.log(result);

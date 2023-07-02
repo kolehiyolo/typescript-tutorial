@@ -50,3 +50,12 @@ Lesson 8: Function Basics
 * For example, while we can name a function to explain what it does and even write comments to detail this, having the return value's type further makes reading code easier and will certainly help avoid function chain errors
 * Also, any variable that is assigned a function's return value implicitly takes the type of said return value, for example, let result = minus(10, 7), in which minus()'s return value type is number, sets result to be of type number
 * I think that's it overall
+
+Lesson 9: Type Aliases
+* Type Aliases are basically a way to shorthand type declarations with the type keyword
+* It's like creating variables with types for values, ie type StringOrNum = string | number
+* What the above code does is creates a variable that represents the type union string | number
+* Now when you declare a variable that needs the typing string | number, you can just declare it with type StringOrNum
+* Honestly I don't know exactly how I would make use of this as I don't even imagine using union typing for variables (I never use multi-type variables)
+* The greatest power of this is when setting typing for objects, in which you can explicitly determine typing for objects being passed as parameters to functions
+* THis way, you're guaranteed to get the correct parameters when performing object/array related manipulations in a function
