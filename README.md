@@ -59,3 +59,9 @@ Lesson 9: Type Aliases
 * Honestly I don't know exactly how I would make use of this as I don't even imagine using union typing for variables (I never use multi-type variables)
 * The greatest power of this is when setting typing for objects, in which you can explicitly determine typing for objects being passed as parameters to functions
 * THis way, you're guaranteed to get the correct parameters when performing object/array related manipulations in a function
+
+Lesson 10: Function Signatures
+* Function Signatures is a way to further break down the typing of Functions in that you can explicitly determine what a function's acceptable paramater and return value typings are
+* This way, if you don't know yet what a function is expected to do but you already know what its parameters and return values are, you can set the typing for those
+  * Another absurdly niche use-case that I can't see myself utilizing, tbh
+* Not much else to explain besides what I just said
