@@ -26,3 +26,9 @@ Lesson 5: Explicit Types
 * You can assign an array type to a variable by doing variableName: type[], and it's recommended to declare an empty array value so array methods can be done to the variable in the future such as pushing
 * You can also use mixed types for variables by declaring types with the | operator (the traditional OR operator is || so keep in mind the difference)
 * Lastly, you can use the keyword "object" as a type, or if you want to specify the properties and their typing, just do a typical Mongoose-like Schema declaration
+
+Lesson 6: Dynamic (any) Types
+* Much more straightforward lesson
+* Basically, you can use the "any" keyword as a type, which means you can assign a variable any type of value
+* This flies in the face of what TypeScript is all about, and I think this is just done if you somehow wnat to opt out of the default behavior in which variables are implicitly assigned types
+* The tutorial says this can be useful in very rare/niche scenarios, but damn I can't think of any such scenario off the top of my head
