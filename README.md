@@ -85,3 +85,11 @@ Lesson 11: The DOM & Type Casting
   * What's interesting is the event parameter is expected to have a unique TypeScript type of 'Event'
   * Idunno it's just cool I think lol and I suppose it is nice to have this explicitly stated for extra readability
 * Overall, besides this lesson and the YouTube videos being systematically recommended to me by the Algorithm about TypeScript, my appreciation for the language is growing stronger
+
+Lesson 12: Classes
+* This lesson is a great refresher on JavaScript classes, a topic that I learned but forgot to it's limited use in my day-to-day, but also on how it's different in TypeScript
+  * I should really really really learn classes again, since I can't even appreciate what TypeScript classes does better 
+* With this refresher and since having come so far in coding I realized that classes and Mongoose/MongoDB schemas can be treated as a similar thing, where classes/schemas define what the expected properties of objects/documents are
+  * Sort of like templates for data, making sure that you can have a uniform label and structure for each data entry
+* I do this a lot but never really felt the need to definitively use classes, so I'll look into use cases
+* Overall, this has led me to want to review classes
