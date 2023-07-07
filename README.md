@@ -65,3 +65,23 @@ Lesson 10: Function Signatures
 * This way, if you don't know yet what a function is expected to do but you already know what its parameters and return values are, you can set the typing for those
   * Another absurdly niche use-case that I can't see myself utilizing, tbh
 * Not much else to explain besides what I just said
+
+Lesson 11: The DOM & Type Casting
+* Now this is an interesting lesson that dives into how the DOM works with TypeScript and something that I can definitely use
+* TypeScript allows for awesome IDE DX when working with the DOM, but it only works when you follow the script but albeit helpful syntax
+* First off, surprisingly, TypeScript actually has unique types for all kinds of HTML tags, as an example, <form> elements are under the HTMLFormElement type, <input> elements are under the HTMLInputElement, and <a> elements are under the HTMLAnchorElement
+  * Clearly it's not gonna be straightforward to determine the actual name of the types, such as with the <a> element, so I might have to look into the options, but I believe VSCode's IntelliSense can help with this pain-point
+* Now once an element has been fetched, IntelliSense can then help you significantly by narrowing down the stuff you can do with the element, such as calling methods or fetching property values (since DOM elements are returned as objects)
+* One pitfall is before you can do these things with the fetched element, you have to first make sure that the DOM fetch will not return null/undefined, and this can be done by adding '!' to the end of the call before the semi-colon, or by defining the expected element's type with 'as (HTML Element Type)'
+  * Examples are:
+    * const anchor = document.querySelector('a')!;
+    * const anchor = document.querySelector('a') as HTMLAnchorElement;
+  * Unless this is done, TypeScript will assume that the fetch may return a null if no such element is found in the DOM, so it will preventively not allow you to run any methods or fetch values from the element, such as with this example:
+    * console.log(anchor.href);
+    * The sample code will not be accepted by TypeScript since it believes that it's a possibility that no <a> element is found in the DOM, so the '!' kinda tells TypeScript 'Oh no trust me there is one'
+    * Not sure why, but also explicitly declaring the type of the element with 'as HTMLAnchorElement' does the same thing as '!' in this particular scenario
+* An interesting oddity I noticed is when the addEventListener example is shown, wherein typically this expects 2 parameters, the type of event-listener being added to the element ('click', 'submit', etc), then a callback function
+  * This callback function then expects an event parameter which is then usually used as meta-data describing the event detected
+  * What's interesting is the event parameter is expected to have a unique TypeScript type of 'Event'
+  * Idunno it's just cool I think lol and I suppose it is nice to have this explicitly stated for extra readability
+* Overall, besides this lesson and the YouTube videos being systematically recommended to me by the Algorithm about TypeScript, my appreciation for the language is growing stronger
