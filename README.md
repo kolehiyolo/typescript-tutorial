@@ -122,3 +122,5 @@ Lesson 15: Interfaces
 * So yeah, I don't get why Interfaces exist
 * Also, I'm pretty sure you can also just create a new 'type' alias that you can then use to make sure your object follows the set rules
 * Well The Net Ninja says that we'll use it more in the coming lessons along with classes so we'll see if I get it then
+
+Lesson 16: Interfaces with Classes

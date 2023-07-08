@@ -1,39 +1,27 @@
 // interfaces
-interface isPerson {
-  name: string;
-  age: number;
-  speak(a: string): void;
-  spend(a: number): number;
-};
-
-const me: isPerson = {
-  name: 'shaun',
-  age: 30,
-  speak(text: string): void {
-    console.log(text);
-  },
-  spend(amount: number): number {
-    console.log(`I spent ${amount}`);
-    return amount;
-  },
-};
-
-let someone: isPerson;
-
-const greetPerson = (person: isPerson) => {
-  console.log(`Hello ${person.name}`);
-};
-
-greetPerson(me);
-
 import {Invoice} from './classes/Invoice.js';
+import {Payment} from './classes/Payment.js';
+import {HasFormatter} from './interfaces/HasFormatter.js';
 
-const invOne = new Invoice('mario','work on the mario website', 250);
-const invTwo = new Invoice('luigi','work on the luigi website', 300);
+// let docOne: HasFormatter;
+// let docTwo: HasFormatter;
+
+let docOne = new Invoice('yoshi', 'web work', 250);
+let docTwo = new Payment('mario', 'plumbing work', 200);
+
+// const invOne = new Invoice('mario','work on the mario website', 250);
+// const invTwo = new Invoice('luigi','work on the luigi website', 300);
+
+let docs: HasFormatter[] = [];
+
+docs.push(docOne);
+docs.push(docTwo);
+
+console.log(docs);
 
 let invoices: Invoice[] = [];
-invoices.push(invOne);
-invoices.push(invTwo);
+// invoices.push(invOne);
+// invoices.push(invTwo);
 
 invoices.forEach(
   (inv) => {

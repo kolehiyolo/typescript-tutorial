@@ -1,26 +1,19 @@
-;
-const me = {
-    name: 'shaun',
-    age: 30,
-    speak(text) {
-        console.log(text);
-    },
-    spend(amount) {
-        console.log(`I spent ${amount}`);
-        return amount;
-    },
-};
-let someone;
-const greetPerson = (person) => {
-    console.log(`Hello ${person.name}`);
-};
-greetPerson(me);
+// interfaces
 import { Invoice } from './classes/Invoice.js';
-const invOne = new Invoice('mario', 'work on the mario website', 250);
-const invTwo = new Invoice('luigi', 'work on the luigi website', 300);
+import { Payment } from './classes/Payment.js';
+// let docOne: HasFormatter;
+// let docTwo: HasFormatter;
+let docOne = new Invoice('yoshi', 'web work', 250);
+let docTwo = new Payment('mario', 'plumbing work', 200);
+// const invOne = new Invoice('mario','work on the mario website', 250);
+// const invTwo = new Invoice('luigi','work on the luigi website', 300);
+let docs = [];
+docs.push(docOne);
+docs.push(docTwo);
+console.log(docs);
 let invoices = [];
-invoices.push(invOne);
-invoices.push(invTwo);
+// invoices.push(invOne);
+// invoices.push(invTwo);
 invoices.forEach((inv) => {
     console.log(inv.client, inv.amount, inv.format());
 });
