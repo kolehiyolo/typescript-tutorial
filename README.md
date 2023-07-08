@@ -104,3 +104,6 @@ Lesson 13: Public, Private & Readonly
 * Readonly properties can only be read in-and-out of the class implementation and there's no way to modify the value once instantiated
 * Private properties can only be read and modified inside of the class implementation, which means you have to set methods/interfaces that manipulate/access the Private property, which will then be called outside of the implementation
 * Yeah I get Encapsulation yey
+
+Lesson 14: Modules
+* 
