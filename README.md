@@ -111,3 +111,14 @@ Lesson 14: Modules
 * Something to keep in mind though is while I am writing in TypeScript and expect to import code from a TS file, I must actually call it as a JS file
 * This is because once the TS files are compiled, they will be JS files, and the import call for a TS file won't be translated to call a JS file
 * Beyond that, import/export rules seem to be identical to how I use it with React.js
+
+Lesson 15: Interfaces
+* Okay so Interfaces
+* At a first glance, Interfaces and Classes seem to function the same way, but I guess the way they're used syntactically is the difference
+* When you create a Class and use it, you basically 'create' or 'instantiate' a new object based on the Class
+* When using an Interface, on the other hand, you can straight up declare an object and just notate it with the Interface as if it's a type
+* Beyond that, I legit don't quite see why you would use one or the other, so I checked with ChatGPT
+* Apparently, Classes can do so much more than Interface, such as allowing for inheritance and accessibility modifiers (public, private, readonly)
+* So yeah, I don't get why Interfaces exist
+* Also, I'm pretty sure you can also just create a new 'type' alias that you can then use to make sure your object follows the set rules
+* Well The Net Ninja says that we'll use it more in the coming lessons along with classes so we'll see if I get it then
