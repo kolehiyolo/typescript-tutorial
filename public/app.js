@@ -1,29 +1,43 @@
 // interfaces
 import { Invoice } from './classes/Invoice.js';
 import { Payment } from './classes/Payment.js';
-// let docOne: HasFormatter;
-// let docTwo: HasFormatter;
-let docOne = new Invoice('yoshi', 'web work', 250);
-let docTwo = new Payment('mario', 'plumbing work', 200);
-// const invOne = new Invoice('mario','work on the mario website', 250);
-// const invTwo = new Invoice('luigi','work on the luigi website', 300);
 let docs = [];
-docs.push(docOne);
-docs.push(docTwo);
-console.log(docs);
-let invoices = [];
-// invoices.push(invOne);
-// invoices.push(invTwo);
-invoices.forEach((inv) => {
-    console.log(inv.client, inv.amount, inv.format());
-});
-// inputs
-const form = document.querySelector('form');
-const type = document.querySelector('#type');
-const toFrom = document.querySelector('#toFrom');
-const details = document.querySelector('#details');
-const amount = document.querySelector('#amount');
-form.addEventListener('submit', (e) => {
+function processSubmit(e) {
     e.preventDefault();
-    console.log(type.value, toFrom.value, details.value, amount.valueAsNumber);
-});
+    const fetchedData = fetchData();
+    const newDocument = createDocument(fetchedData);
+    docs.push(newDocument);
+    presentDocuments();
+}
+;
+function fetchData() {
+    return {
+        type: document.querySelector('#type').value,
+        toFrom: document.querySelector('#toFrom').value,
+        details: document.querySelector('#details').value,
+        amount: document.querySelector('#amount').valueAsNumber
+    };
+}
+;
+function createDocument(fetchedData) {
+    switch (fetchedData.type) {
+        case ('invoice'):
+            const newInvoice = new Invoice(fetchedData.toFrom, fetchedData.details, fetchedData.amount);
+            return newInvoice;
+        default:
+            const newPayment = new Payment(fetchedData.toFrom, fetchedData.details, fetchedData.amount);
+            return newPayment;
+    }
+}
+;
+function presentDocuments() {
+    console.clear();
+    docs.forEach((doc) => {
+        console.log(doc.format());
+    });
+}
+;
+// * Fetching Form and assigning Submit Event Listener
+// -* Call processSubmit() once triggered
+document.querySelector('form')
+    .addEventListener('submit', processSubmit);

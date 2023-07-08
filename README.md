@@ -124,3 +124,19 @@ Lesson 15: Interfaces
 * Well The Net Ninja says that we'll use it more in the coming lessons along with classes so we'll see if I get it then
 
 Lesson 16: Interfaces with Classes
+* So, still not entirely sure what use Interfaces are
+* In the lesson the "implements" keyword is introduced, which is a way to use the rules from an Interface on a Class
+* I guess you can think of Interfaces as just "rules", rules that can then be applied to multiple Classes if you want through "implements"
+* Either way, I went ahead and rebuilt my app.ts just so it's cleaner
+* I sort of understand the functionality expected for the test project, so my app.ts now works the ff way:
+  * A docs array is set, expecting only documents with the HasFormatter interface
+  * A submit listener is placed on the form
+  * processSubmit() is called when the submit listener is triggered
+  * processSubmit() calls fetchData(), getting the data from the inputs and placing it on an object that follows the Data interface
+  * This fetchedData is then passed as a parameter to createDocument(), which then creates a newDocument based on the fetchData.type
+    * If 'invoice', it creates a new Invoice
+    * If anything else (which is basically the 'payment' option), it creates a new Payment
+  * This new object is then returned and is assigned to the newDocument variable
+  * newDocument is then pushed to the docs array
+  * Then, presentDocuments() is called, which simply runs through all items under docs and calls format() for each
+* This was a good exercise on Functions in TypeScript, but I need lots more practice beyond this
