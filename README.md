@@ -93,3 +93,14 @@ Lesson 12: Classes
   * Sort of like templates for data, making sure that you can have a uniform label and structure for each data entry
 * I do this a lot but never really felt the need to definitively use classes, so I'll look into use cases
 * Overall, this has led me to want to review classes
+
+Lesson 13: Public, Private & Readonly
+* We're getting more into classes, and more importantly into access modifiers to certain data
+* Since last night, I've been doing back-and-forths with ChatGPT to better understand OOP since it's been a while and barely use the principles I've learned
+* Throughout this process, I appreciated and learned more about Encapsulation, Inheritance and Polymorphism
+* Encapsulation, in particular, is relevant to this lesson since it describes the process of defining the limits/rules on how data within classes/objects are accessed/modified
+* In this lesson, for example, it clearly defines certain rules for how data in the Invoice class can be accessed
+* Public properties can be read and modified in-and-out of the class implementation
+* Readonly properties can only be read in-and-out of the class implementation and there's no way to modify the value once instantiated
+* Private properties can only be read and modified inside of the class implementation, which means you have to set methods/interfaces that manipulate/access the Private property, which will then be called outside of the implementation
+* Yeah I get Encapsulation yey
