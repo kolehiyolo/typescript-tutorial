@@ -106,4 +106,8 @@ Lesson 13: Public, Private & Readonly
 * Yeah I get Encapsulation yey
 
 Lesson 14: Modules
-* 
+* Modularizing code has been introduced in this lesson
+* Nothing groundbreaking here since I already know enough about it from using Node.js and React.js
+* Something to keep in mind though is while I am writing in TypeScript and expect to import code from a TS file, I must actually call it as a JS file
+* This is because once the TS files are compiled, they will be JS files, and the import call for a TS file won't be translated to call a JS file
+* Beyond that, import/export rules seem to be identical to how I use it with React.js
