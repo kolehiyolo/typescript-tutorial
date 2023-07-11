@@ -1,13 +1,18 @@
 // interfaces
 import { Invoice } from './classes/Invoice.js';
 import { Payment } from './classes/Payment.js';
+import { ListTemplate } from './classes/ListTemplate.js';
 let docs = [];
+// list template instance
+const ul = document.querySelector('ul');
+const list = new ListTemplate(ul);
 function processSubmit(e) {
     e.preventDefault();
     const fetchedData = fetchData();
     const newDocument = createDocument(fetchedData);
     docs.push(newDocument);
-    presentDocuments();
+    logDocuments();
+    addToList(newDocument, fetchedData.type);
 }
 ;
 function fetchData() {
@@ -30,7 +35,10 @@ function createDocument(fetchedData) {
     }
 }
 ;
-function presentDocuments() {
+function addToList(doc, fetchedDataType) {
+    list.render(doc, fetchedDataType, 'end');
+}
+function logDocuments() {
     console.clear();
     docs.forEach((doc) => {
         console.log(doc.format());

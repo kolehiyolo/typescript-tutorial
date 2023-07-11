@@ -3,8 +3,13 @@ import {Invoice} from './classes/Invoice.js';
 import {Payment} from './classes/Payment.js';
 import {HasFormatter} from './interfaces/HasFormatter.js';
 import {Data} from './interfaces/Data.js';
+import {ListTemplate} from './classes/ListTemplate.js';
 
 let docs: HasFormatter[] = [];
+
+// list template instance
+const ul = document.querySelector('ul') as HTMLUListElement;
+const list = new ListTemplate(ul);
 
 function processSubmit(e: Event): void {
   e.preventDefault();
@@ -13,7 +18,9 @@ function processSubmit(e: Event): void {
   const newDocument: HasFormatter = createDocument(fetchedData);
 
   docs.push(newDocument);
-  presentDocuments();
+  logDocuments();
+  addToList(newDocument, fetchedData.type);
+  
 };
 
 function fetchData(): Data {
@@ -44,7 +51,11 @@ function createDocument(fetchedData: Data): HasFormatter {
   }
 };
 
-function presentDocuments(): void {
+function addToList(doc: HasFormatter, fetchedDataType: string): void {
+  list.render(doc, fetchedDataType, 'end');
+}
+
+function logDocuments(): void {
   console.clear();
   docs.forEach(
     (doc) => {

@@ -140,3 +140,10 @@ Lesson 16: Interfaces with Classes
   * newDocument is then pushed to the docs array
   * Then, presentDocuments() is called, which simply runs through all items under docs and calls format() for each
 * This was a good exercise on Functions in TypeScript, but I need lots more practice beyond this
+
+Lesson 17: Rendering an HTML Template
+* So in this lesson, we explored how to manipulate the DOM when it comes to adding new elements to the page
+* The implementation in the tutorial is interesting, where we created a Class for the List itself, but not for the list items
+* When the ListTemplate instance is created, we then call the render() method passing on the latest created document to render a new <li> element into the list instance
+* It's weird and I'm not sure if it's how I would do things, but that may be because I'm used to creating objects/instances of HTML elements via React
+* This lesson is nice to know, but I'm not sure if I'll make full use of it considering I do React
