@@ -147,3 +147,8 @@ Lesson 17: Rendering an HTML Template
 * When the ListTemplate instance is created, we then call the render() method passing on the latest created document to render a new <li> element into the list instance
 * It's weird and I'm not sure if it's how I would do things, but that may be because I'm used to creating objects/instances of HTML elements via React
 * This lesson is nice to know, but I'm not sure if I'll make full use of it considering I do React
+
+Lesson 18: Generics
+* Another interesting TypeScript specific quirk that I'm not sure what I'll use for lol
+* As I understand, Generics allow for remembering any data type passed when creating instances from a Class or when using interfaces
+* I can't explain it beyond that honestly and I just hope to better understand why I ought to learn and keep this in mind once I get to actually building my projects

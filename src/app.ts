@@ -1,70 +1,47 @@
-// interfaces
-import {Invoice} from './classes/Invoice.js';
-import {Payment} from './classes/Payment.js';
-import {HasFormatter} from './interfaces/HasFormatter.js';
-import {Data} from './interfaces/Data.js';
-import {ListTemplate} from './classes/ListTemplate.js';
-
-let docs: HasFormatter[] = [];
-
-// list template instance
-const ul = document.querySelector('ul') as HTMLUListElement;
-const list = new ListTemplate(ul);
-
-function processSubmit(e: Event): void {
-  e.preventDefault();
-
-  const fetchedData: Data = fetchData();
-  const newDocument: HasFormatter = createDocument(fetchedData);
-
-  docs.push(newDocument);
-  logDocuments();
-  addToList(newDocument, fetchedData.type);
-  
-};
-
-function fetchData(): Data {
-  return {
-    type: (document.querySelector('#type') as HTMLSelectElement).value,
-    toFrom: (document.querySelector('#toFrom') as HTMLInputElement).value,
-    details: (document.querySelector('#details') as HTMLInputElement).value,
-    amount: (document.querySelector('#amount') as HTMLInputElement).valueAsNumber
-  };
-};
-
-function createDocument(fetchedData: Data): HasFormatter {
-  switch(fetchedData.type) {
-    case ('invoice'):
-      const newInvoice = new Invoice(
-        fetchedData.toFrom,
-        fetchedData.details,
-        fetchedData.amount
-      );
-      return newInvoice;
-    default:
-      const newPayment = new Payment(
-        fetchedData.toFrom,
-        fetchedData.details,
-        fetchedData.amount
-      );
-      return newPayment;
-  }
-};
-
-function addToList(doc: HasFormatter, fetchedDataType: string): void {
-  list.render(doc, fetchedDataType, 'end');
+// * Generics
+const addUID = <T extends {name: string}>(obj: T) => {
+  const uid = Math.floor(Math.random() * 100);
+  return {...obj, uid};
 }
 
-function logDocuments(): void {
-  console.clear();
-  docs.forEach(
-    (doc) => {
-      console.log(doc.format());
-    }
-  );
+let prevObj = {
+  name: 'Yoshi',
+  age: 40
 };
 
-// * Fetching Form and assigning Submit Event Listener
-// -* Call processSubmit() once triggered
-(document.querySelector('form') as HTMLFormElement)
-  .addEventListener('submit', processSubmit); 
+let docOne = addUID(prevObj);
+
+console.log(docOne);
+console.log(docOne.name);
+
+// let docTwo = addUID('hello');
+// console.log(docTwo);
+
+// * Generics with Interfaces
+// interface Resource {
+//   uid: number;
+//   resourceName: string;
+//   data: object;
+// }
+
+interface Resource<T> {
+  uid: number;
+  resourceName: string;
+  data: T;
+}
+
+const doc3: Resource<object> = {
+  uid: 1,
+  resourceName: 'Person',
+  data: {}
+};
+
+console.log(doc3);
+
+const doc4: Resource<string[]> = {
+  uid: 2,
+  resourceName: 'Shopping List',
+  data: ['bread', 'milk']
+}
+
+console.log(doc4);
