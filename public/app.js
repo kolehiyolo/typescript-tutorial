@@ -1,25 +1,24 @@
 "use strict";
-// * Generics
-const addUID = (obj) => {
-    const uid = Math.floor(Math.random() * 100);
-    return Object.assign(Object.assign({}, obj), { uid });
-};
-let prevObj = {
-    name: 'Yoshi',
-    age: 40
-};
-let docOne = addUID(prevObj);
-console.log(docOne);
-console.log(docOne.name);
-const doc3 = {
+// * Enums
+var ResourceType;
+(function (ResourceType) {
+    ResourceType[ResourceType["BOOK"] = 0] = "BOOK";
+    ResourceType[ResourceType["AUTHOR"] = 1] = "AUTHOR";
+    ResourceType[ResourceType["FILM"] = 2] = "FILM";
+    ResourceType[ResourceType["DIRECTOR"] = 3] = "DIRECTOR";
+    ResourceType[ResourceType["PERSON"] = 4] = "PERSON";
+})(ResourceType || (ResourceType = {}));
+;
+;
+const docOne = {
     uid: 1,
-    resourceName: 'Person',
-    data: {}
+    resourceType: ResourceType.BOOK,
+    data: { title: 'name of the wind' }
 };
-console.log(doc3);
-const doc4 = {
-    uid: 2,
-    resourceName: 'Shopping List',
-    data: ['bread', 'milk']
+const docTwo = {
+    uid: 10,
+    resourceType: ResourceType.PERSON,
+    data: { name: 'yoshi' }
 };
-console.log(doc4);
+console.log(docOne);
+console.log(docTwo);

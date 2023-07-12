@@ -152,3 +152,6 @@ Lesson 18: Generics
 * Another interesting TypeScript specific quirk that I'm not sure what I'll use for lol
 * As I understand, Generics allow for remembering any data type passed when creating instances from a Class or when using interfaces
 * I can't explain it beyond that honestly and I just hope to better understand why I ought to learn and keep this in mind once I get to actually building my projects
+
+Lesson 19: Enums
+* 
