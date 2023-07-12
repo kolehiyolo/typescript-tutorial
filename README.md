@@ -171,3 +171,12 @@ Lesson 20: Tuples
 * This is kinda cool as it limits the values pushed into the array into a predefined limit
 * Beyond that, I'm not sure what use tuples will be for me, since I'm not a fan of having multi-typed arrays anyways
 * I'd rather use objects in most of the use case scenarios where multi-typed arrays are used, as this way, there's a clearer definition of what each value is
+
+Lesson 21: Wrap Up
+* So yeah, TypeScript is cool
+* I can definitely see it being important in my day-to-day, same way with SASS
+* That being said, I'm not entirely sure yet how I would use it with the rest of my tech stack, as the use cases presented in the tutorial are so self-contained in just replacing vanilla JS in a vanilla HTML+CSS environment
+* Also, I did some CodeWars challenge and I found that a lot of other solutions don't even use TypeScript's typing inside the functions very much lol
+* They only use it to declare the return type, and I think that's it lol
+* As the tutor says, the next best steps is to check out the TypeScript documentation, and also his Webpack+TypeScript tutorials
+* Beyond all that, building a project is defo the best way to go
