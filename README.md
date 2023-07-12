@@ -154,4 +154,10 @@ Lesson 18: Generics
 * I can't explain it beyond that honestly and I just hope to better understand why I ought to learn and keep this in mind once I get to actually building my projects
 
 Lesson 19: Enums
-* 
+* So I like enums
+* I can see using enums when establishing "categories" or "tags" for objects
+* For example, when I have products, while I can use classes to put them under more specified umbrellas of categorization, it's inevitable that some of the products will still have shared attributes/characteristics
+* Using enums, I think, will help with this
+* I think the best use for it that I can see is for my portfolio, wherein I will have lots of projects, each of which will have "built with" data which is expected to list down all the tech/skills used to build the project
+* This data will come from an enum, and some projects inevitably will have the same tech/skill used
+* Beyond that, I'm not sure what the use case will be, so I'll just have to revisit this
