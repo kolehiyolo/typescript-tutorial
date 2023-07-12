@@ -1,24 +1,62 @@
-"use strict";
-// * Enums
-var ResourceType;
-(function (ResourceType) {
-    ResourceType[ResourceType["BOOK"] = 0] = "BOOK";
-    ResourceType[ResourceType["AUTHOR"] = 1] = "AUTHOR";
-    ResourceType[ResourceType["FILM"] = 2] = "FILM";
-    ResourceType[ResourceType["DIRECTOR"] = 3] = "DIRECTOR";
-    ResourceType[ResourceType["PERSON"] = 4] = "PERSON";
-})(ResourceType || (ResourceType = {}));
+// interfaces
+import { Invoice } from './classes/Invoice.js';
+import { Payment } from './classes/Payment.js';
+import { ListTemplate } from './classes/ListTemplate.js';
+let docs = [];
+// list template instance
+const ul = document.querySelector('ul');
+const list = new ListTemplate(ul);
+function processSubmit(e) {
+    e.preventDefault();
+    const fetchedData = fetchData();
+    const newDocument = createDocument(fetchedData);
+    docs.push(newDocument);
+    logDocuments();
+    addToList(newDocument, fetchedData.type);
+}
 ;
+function fetchData() {
+    return {
+        type: document.querySelector('#type').value,
+        toFrom: document.querySelector('#toFrom').value,
+        details: document.querySelector('#details').value,
+        amount: document.querySelector('#amount').valueAsNumber
+    };
+}
 ;
-const docOne = {
-    uid: 1,
-    resourceType: ResourceType.BOOK,
-    data: { title: 'name of the wind' }
-};
-const docTwo = {
-    uid: 10,
-    resourceType: ResourceType.PERSON,
-    data: { name: 'yoshi' }
-};
-console.log(docOne);
-console.log(docTwo);
+function createDocument(fetchedData) {
+    switch (fetchedData.type) {
+        case ('invoice'):
+            const newInvoice = new Invoice(fetchedData.toFrom, fetchedData.details, fetchedData.amount);
+            return newInvoice;
+        default:
+            const newPayment = new Payment(fetchedData.toFrom, fetchedData.details, fetchedData.amount);
+            return newPayment;
+    }
+}
+;
+function addToList(doc, fetchedDataType) {
+    list.render(doc, fetchedDataType, 'end');
+}
+function logDocuments() {
+    console.clear();
+    docs.forEach((doc) => {
+        console.log(doc.format());
+    });
+}
+;
+// * Fetching Form and assigning Submit Event Listener
+// -* Call processSubmit() once triggered
+document.querySelector('form')
+    .addEventListener('submit', processSubmit);
+// * Tuples
+let arr = ['ryu', 25, true];
+arr[0] = false;
+arr[1] = 'yoshi';
+arr = [30, false, 'yoshi'];
+console.log(arr);
+let tup;
+tup = ['ryu', 25, true];
+// ! tup = [40, 'hello', true];
+let student;
+student = ['chun-li', 223423];

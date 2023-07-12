@@ -161,3 +161,13 @@ Lesson 19: Enums
 * I think the best use for it that I can see is for my portfolio, wherein I will have lots of projects, each of which will have "built with" data which is expected to list down all the tech/skills used to build the project
 * This data will come from an enum, and some projects inevitably will have the same tech/skill used
 * Beyond that, I'm not sure what the use case will be, so I'll just have to revisit this
+
+Lesson 20: Tuples
+* So tuples is another built-in type in TypeScript
+* Tuples are simply arrays with the types of each index predefined, that's it
+* For example, if a tuple is predefined to have [string, number, boolean], you can't push a number into index 0 or index 2
+* You can replace the values all you want, as long as the new value fits the type predefined
+* In this example, only 3 indexes have been defined, and based on my testing, this means you can't push another value into the array
+* This is kinda cool as it limits the values pushed into the array into a predefined limit
+* Beyond that, I'm not sure what use tuples will be for me, since I'm not a fan of having multi-typed arrays anyways
+* I'd rather use objects in most of the use case scenarios where multi-typed arrays are used, as this way, there's a clearer definition of what each value is
